@@ -40,6 +40,7 @@ const formPets = () => {
       speciesInput.value,
       breedInput.value
     );
+
     const namePet = document.getElementById("namePet");
     const nameOwner = document.getElementById("nameOwner");
     const nameSpecies = document.getElementById("nameSpecies");
@@ -48,6 +49,10 @@ const formPets = () => {
     nameOwner.innerText = PetsInput.ownerName;
     nameSpecies.innerText = PetsInput.species;
     tipeOfBreed.innerText = PetsInput.breed;
+    petNameInput.value = "";
+    ownerNameInput.value = "";
+    speciesInput.value = "";
+    breedInput.value = "";
 
     // const PetsInput2 = new Pet(
     //   petNameInput.value,
@@ -57,12 +62,11 @@ const formPets = () => {
     // );
 
     // Pets.push(PetsInput2);
-
+    console.log(PetsInput);
     Pets.push(PetsInput);
+    console.log(Pets);
   };
 };
 window.onload = () => {
   formPets();
 };
-
-console.log(Pets);
