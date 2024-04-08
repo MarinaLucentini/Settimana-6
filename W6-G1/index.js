@@ -13,7 +13,7 @@ class User {
 const MarinaLucentini = new User("Marina", "Lucentini", 31, "Roma");
 const ClaudiaBurali = new User("Claudia", "Burali", 18, "Napoli");
 console.log(MarinaLucentini.isOlder(ClaudiaBurali));
-const Pets = [];
+const pets = [];
 class Pet {
   constructor(petName, ownerName, species, breed) {
     this.petName = petName;
@@ -41,6 +41,7 @@ const formPets = () => {
       breedInput.value
     );
 
+    pets.push(PetsInput);
     const namePet = document.getElementById("namePet");
     const nameOwner = document.getElementById("nameOwner");
     const nameSpecies = document.getElementById("nameSpecies");
@@ -63,8 +64,10 @@ const formPets = () => {
 
     // Pets.push(PetsInput2);
     console.log(PetsInput);
-    Pets.push(PetsInput);
-    console.log(Pets);
+    console.log(pets);
+
+    const veroOrFalse = document.getElementById("veroOrFalse");
+    veroOrFalse.innerText = pets[0].isSameOwner(pets[1]);
   };
 };
 window.onload = () => {
